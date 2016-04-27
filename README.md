@@ -9,6 +9,10 @@ Providers are an way organizing redux stores in a predictable way. They also eff
 
 There are a number of canned providers on npm including: provide-array, provide-map, provide-page, provide-history and more than can save you precious development time and boilerplate actions and reducers.
 
+Note on middleware vs enhancers:
+Enahancers are really just functions that return the store (potentially modified.) These enhancers can also apply middlwares if they want to. Enhancers are only run *ONCE* per store.
+Middlwares, on the other hand, are functions that return a (potentially) modified action. The middleware is run every time an action is fired.
+
 ### Sagas
 
 > An alternative Side Effects middleware (aka Asynchronous Actions) for Redux applications. Instead of dispatching Thunks which get handled by the redux-thunk middleware, you create Sagas to gather all your Side Effects logic in a central place.
